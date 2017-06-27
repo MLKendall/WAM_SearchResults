@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "WAM Search Results";
+}
+
+<header>
+    <h1>Employee Search</h1>
+</header>
+<div class="search">
+    <form>
+        <input type="text" placeholder="Employee Search" id="userInput" name="userInput" />
+        <input type="button" id="searchButton" value="Search" />
+    </form>
+    <div id="response">
+        <ul></ul>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        var searchButton = $('#searchButton');
+        searchButton.click(function () {
+            $.ajax({
+                url: '/home/search?userInput=' + $('#userInput').val(),
+                type: 'GET',
+                success: function (data) {
+                    var responseList = $('#response ul');
+                    reponseList.html('');
+                    data.map(function (employee) {
+                        responseList.append('<li><span class="name">' + employee.name + '</span> <span class="title">' + employee.title + '</span>');
+                    });
+                    responseList.show();
+                }
+            });
+        });
+
+    </script>
+    }
+
+
