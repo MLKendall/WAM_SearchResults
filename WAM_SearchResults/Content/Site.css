@@ -80,7 +80,7 @@ a {
     font-family: inherit;
 }
 
-.search input[type="submit"]{
+.search input[type="button"]{
   display: inline-block;
   width: 15%;
   border-radius: 5px;

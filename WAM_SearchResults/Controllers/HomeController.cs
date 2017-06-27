@@ -32,7 +32,7 @@ namespace WAM_SearchResults.Controllers
             return View();
         }
 
-        public string Search(string userInput)
+        public ActionResult Search(string userInput)
         {
             string result;
             List<Employee> resultsArray = new List<Employee>();
@@ -60,10 +60,9 @@ namespace WAM_SearchResults.Controllers
                           ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
                           ContractResolver = new CamelCasePropertyNamesContractResolver()
                       });
+            return Content(result, "application/json");
 
-            return result;
 
-            
         }
 
     }
