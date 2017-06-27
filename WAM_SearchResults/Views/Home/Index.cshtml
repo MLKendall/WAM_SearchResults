@@ -30,7 +30,7 @@
                     //data = JSON.parse(data);
                     responseList.html('');
                     data.map(function (employee) {
-                        responseList.append('<li><span class="name">' + employee.name + '</span> <span class="title">' + employee.title + '</span>');
+                        responseList.append('<li><span class="name">' + employee.name + '</span>, <span class="title">' + employee.title + '</span>');
                     });
                     responseList.show();
                 }

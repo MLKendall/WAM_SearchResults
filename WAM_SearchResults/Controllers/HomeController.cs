@@ -25,7 +25,24 @@ namespace WAM_SearchResults.Controllers
             temp.name = "John Doe";
             temp.title = "Vice President";
             Employees.Add(temp);
+
+            temp = new Employee();
+            temp.name = "Laura Jones";
+            temp.title = "HR Manager";
+            Employees.Add(temp);
+
+            temp = new Employee();
+            temp.name = "Bob Jones";
+            temp.title = "Developer";
+            Employees.Add(temp);
+
+            temp = new Employee();
+            temp.name = "Tim Jones";
+            temp.title = "Developer";
+            Employees.Add(temp);
+
         }
+
 
         public ActionResult Index()
         {
@@ -41,7 +58,7 @@ namespace WAM_SearchResults.Controllers
             {
                 foreach (var employee in Employees) 
                 {
-                    if (employee.name.Contains(userInput) || employee.title.Contains(userInput))
+                    if (employee.name.ToLower().Contains(userInput.ToLower()) || employee.title.ToLower().Contains(userInput.ToLower()))
                     {
                         resultsArray.Add(employee);
                     }

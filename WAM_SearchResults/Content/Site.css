@@ -88,8 +88,7 @@ a {
 }
 
 #response {
-    width: 90%;
-    margin: 0 auto;
+    width: 80%;
     background-color: white;
 }
 
@@ -112,16 +111,8 @@ li:hover {
     background-color: #A9A9A9;
 }
 
-span.name {
-    display: block;
-    margin-bottom: 5px;
+span.name, span.title {
     font-size: 16px;
-    font-weight: 400;
-}
-
-span.title {
-    display: block;
-    font-size: 12px;
     font-weight: 400;
 }
 
